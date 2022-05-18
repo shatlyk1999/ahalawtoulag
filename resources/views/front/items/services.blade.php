@@ -22,18 +22,6 @@
                     <p class="about-content-p">{!!($services->content)!!}</p>
                 </div>
             </div>
-            <!-- @foreach($serviceitems as $serviceitem)
-            <div class="col-md-6 box-koimana move">
-                <div class="d_b_i" style="background:url('{{asset($serviceitem->image)}}') center no-repeat;">
-                    <div class="overlay">
-                        <div class="d_item_1">
-                            <h5 class="uppercase">{{$serviceitem->title}}</h5>
-                            {!!($serviceitem->content)!!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach -->
         </div>
         <div class="functions">
             <div class="row text-center">

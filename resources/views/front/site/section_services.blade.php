@@ -1,29 +1,3 @@
-<!-- <div class="d_servic">
-    <div class="container">
-        <div class="row">
-            <div class="title_section">
-                <div class="text-center margin-bottom-20">
-                    <h2 class="move zoomIn uppercase">@lang('messages.Our services')</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach($serviceitems as $serviceitem)
-            <div class="col-md-6 box-koimana move">
-                <div class="d_b_i" style="background:url('{{asset($serviceitem->image)}}') center no-repeat;">
-                    <div class="overlay">
-                        <div class="d_item_1">
-                            <h5 class="uppercase">{{$serviceitem->title}}</h5>
-                            {!!($serviceitem->content)!!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div> -->
-
 <section class="d_servic">
     <div class="container">
         <div class="functions">
@@ -72,9 +46,7 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
-
     </div>
 </section>

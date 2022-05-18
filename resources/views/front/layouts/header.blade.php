@@ -52,32 +52,22 @@
             <span>@lang('messages.logo')</span>
         </a>
         <a href="{{route('home')}}" class="site-logo site-nysan">
-            <!-- <img src="{{asset('front/assets/2022nysany.png')}}" class="nysan-img d-n" alt="2022nysan"> -->
             <span>@lang('messages.logo_2022')</span>
             <img src="{{asset('front/assets/2022nysany.png')}}" class="nysan-img" alt="2022nysan">
         </a>
         <a href="javascript:void(0);" class="mobi-toggler main-nav-bar">        
             <span class="line"></span>          
         </a>
-
-        <!-- BEGIN NAVIGATION -->
-        
-        <!-- END NAVIGATION -->
     </div>
     <div class="container">
         <div class="header-navigation font-transform-inherit scroll_spy" >
             <ul role="tablist">
                 <li class="underline"><a href="{{route('home')}}">@lang('messages.home_page')</a></li>
                 <li class="underline"><a href="{{route('about')}}">@lang('messages.about')</a></li>
-                <!-- <li><a href="#">@lang('messages.news')</a></li> -->
-                <!-- @foreach($category as $cat) -->
                 <li class="underline"><a href="{{route('services')}}">@lang('messages.services')</a></li>
                 <li class="underline"><a href="{{route('normative')}}">@lang('messages.normative')</a></li>
-                <li class="underline"><a href="{{route('news')}}">{{$cat->title}}</a></li>
-                <!-- @endforeach     -->
+                <li class="underline"><a href="{{route('news')}}">@lang('messages.news')</a></li>
                 <li class="underline"><a href="{{route('contactpage')}}">@lang('messages.contact')</a></li>
-                <!-- BEGIN TOP SEARCH -->
-                <!-- END TOP SEARCH -->
             </ul>
         </div>
     </div>

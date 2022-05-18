@@ -41,7 +41,7 @@
                             <div class="cntct">
                                 <form method="post" id="contact-form" action="{{route('contact')}}">
                                 @csrf
-                                @include('front\site\contact_form')
+                                @include('front.site.contact_form')
                                 </form>
                             </div>
                         </div>

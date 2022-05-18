@@ -1,5 +1,4 @@
-<!-- <input type="hidden" name="_csrf-frontend" value="pLXk0LeynJJ_5JD6ymW2udMYEydNgCLKMPKTPq5O1xXj-6CHjsDt9kiq5bapV_GMlHpRdXu3bIxXm_tU1hSHbw=="> -->
-<div class="form_contact">
+<<div class="form_contact">
 @if(session('success'))
     <div class="alert alert-success">
         {{session('success')}}

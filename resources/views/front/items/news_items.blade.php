@@ -17,11 +17,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8" id="order_1">
-            
-                <!-- @isset($news)
-                    <div>Gozlenyan senede habar yok.</div>
-                @endisset
-                -->
                 @foreach($news as $item)    
                     <div class="col-md-12">
                         <div class="v-new v-new-2 event_box move fadeInUp">
@@ -50,53 +45,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container">
-        <div class="row margin-bottom-40">
-            <div class="col-md-12 col-sm-12">
-                <div class="content-page">                    
-                    <div class="margin-bottom-30">
-                        @foreach($news as $item)
-                            <div class="col-lg-4 col-xs-12 mb-50">
-                                <a class="institution-link" href="{{route('newsView', $item->id)}}">
-                                    <article class="grid-blog-post">
-                                        <div class="post-thumbnail">
-                                            <img class="w-100 zoom" src="public/{{$item->image}}" alt="news">
-                                        </div>
-                                        <div class="post-content">
-                                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                            <h2>{{$item->title}}</h2>
-                                            <p style="position: absolute;top: 10px;color: green;">{{$item->created_at->format('Y-m-d')}}</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>  
-            </div>
-            <div style="text-align:center">{{$news->links()}}</div>
-        </div>
-    </div> -->
-     
+   
 </section>
 
 @endsection
-<!-- @section('js')
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#container").simpleCalendar({
-            //Defaults options below
-            //string of months starting from january
-            months: ['january','february','march','april','may','june','july','august','september','october','november','december'],
-            days: ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'], //string of days starting from sunday
-            minDate : "YYYY-MM-DD",         // minimum date
-            maxDate : "YYYY-MM-DD",         // maximum date
-            insertEvent: true,              // can insert events
-            displayEvent: true,             // display existing event
-            fixedStartDay: true,            // Week begin always by monday
-            event: [],                      // List of events
-            insertCallback : function(){}   // Callback when an event is added to the calendar
-        });
-    });
-</script>
-@endsection -->

@@ -47,7 +47,6 @@
 @endforeach
 
 <script src="{{asset('front/js/jquery-3.3.1.min.js')}}"></script>
-<!-- <script src="{{asset('front/js/jquery.min.js')}}"></script> -->
 <script src="{{asset('front/js/jquery.simple-calendar.js')}}"></script>
 <script src="{{asset('front/js/jquery-migrate.min.js')}}"></script>
 <script src="{{asset('front/js/bootstrap.min.js')}}"></script>

@@ -117,27 +117,23 @@
 
 <div class="main">
 <section class="hero hero-home">
-    @include('front\site\section_slider', $data)
+    @include('front.site.section_slider', $data)
 </section>
 
 <section id="main" style="background-color:#FDFDFD;">
-    @include('front\site\section_services', $data) 
+    @include('front.site.section_services', $data) 
 </section>
 
 <section id="">
-    @include('front\site\main_target')
+    @include('front.site.main_target')
 </section>
 
-<!-- <section id="services">
-    @include('front\site\our_services')
-</section> -->
-
 <section id="news" class="news">
-     @include('front\site\news', $data)
+     @include('front.site.news', $data)
 </section>
 
 <section class="section pd-75" id="contact">
-    @include('front\site\contact')
+    @include('front.site.contact')
 </section>
 
 </div>

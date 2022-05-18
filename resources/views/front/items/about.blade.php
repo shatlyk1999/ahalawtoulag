@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="mb-30">
                         <h2 class="page-title move zoomIn uppercase">
-                            <!-- <span style="color:#116B30;">@lang('messages.about')</span> --><span style="color:#116B30;">{{$inf->aboutTitle}}</span>
+                            <span style="color:#116B30;">{{$inf->aboutTitle}}</span>
                         </h2>
                     </div>
                 </div>
