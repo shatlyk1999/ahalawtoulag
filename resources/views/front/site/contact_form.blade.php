@@ -1,4 +1,4 @@
-<<div class="form_contact">
+<div class="form_contact">
 @if(session('success'))
     <div class="alert alert-success">
         {{session('success')}}

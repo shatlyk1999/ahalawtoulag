@@ -2,7 +2,7 @@
     <div class="container">
         <div class="functions">
             <div class="title_section">
-                <h1 style="flex: 1;text-align: center" class="move zoomIn">
+                <h1 style="text-align: center" class="move zoomIn">
                 @lang('messages.Our services')</h1>
             </div>
             <div class="row text-center">
