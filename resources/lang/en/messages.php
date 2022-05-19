@@ -28,6 +28,7 @@ return [
     'fax' => 'Fax',
     'normative' => 'Normative legal acts',
     'download' => 'Download',
+    'doly_oka' => 'Read more',
     'address' => 'Our address', 
     'readMore'=>'Read More',
     'diversifiedCompany'=>'Diversified company',

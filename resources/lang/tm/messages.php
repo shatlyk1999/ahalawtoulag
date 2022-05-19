@@ -27,6 +27,7 @@ return [
     'fax' => 'Faks',
     'agentl' => 'TÜRKMENAWTOULAGLARY <br> AGENTLIGI',
     'download' => 'Ýüklap al',
+    'doly_oka' => 'Doly okaň',
     'normative' => 'Kadalaşdyryjy hukuk namalar',
     'address' => 'Salgymyz',
     'readMore'=>'GIŇIŞLEÝIN',

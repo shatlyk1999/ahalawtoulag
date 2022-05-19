@@ -28,6 +28,7 @@ return [
     'fax' => 'Факс',
     'normative' => 'Нормативно-правовые акты',
     'download' => 'Скачать',
+    'doly_oka' => 'Читать дальше',
     'address' => 'Наш адрес',
     'readMore'=>'ПОДРОБНО',
     'diversifiedCompany'=>'Многопрофильная компания',
