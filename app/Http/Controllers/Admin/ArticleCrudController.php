@@ -63,8 +63,8 @@ class ArticleCrudController extends CrudController
             'name'      => 'image', // The db column name
             'label'     => 'Profile image', // Table column heading
             'type'      => 'image',
-            'crop'      => true,
-            'prefix' => 'public/',
+            // 'crop'      => true,
+            // 'prefix' => 'public/',
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
@@ -105,7 +105,7 @@ class ArticleCrudController extends CrudController
             'name'      => 'image', // The db column name
             'label'     => 'Profile image', // Table column heading
             'type'      => 'image',
-            'crop'      => true, 
+            // 'crop'      => true, 
             // image from a different disk (like s3 bucket)
             // 'disk'   => 'disk-name', 
             // optional width/height if 25px is not ok with you
@@ -155,7 +155,7 @@ class ArticleCrudController extends CrudController
             'label' => "Profile Image",
             'name' => "image",
             'type' => 'image',
-            'crop' => true, // set to true to allow cropping, false to disable
+            // 'crop' => true, // set to true to allow cropping, false to disable
         ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -256,7 +256,6 @@
    background-image: none!important;
 }
 .carousel-inner img{
-  height: 80vh!important; 
   width: 100vw;
   margin: 0 auto;
 }
@@ -264,10 +263,10 @@
 /*  left: 6vw!important;*/
 }
 .carousel-control .glyphicon-chevron-left{
-  left: 13vw;
+  left: 5vw;
 }
 .carousel-control .glyphicon-chevron-right{
-  right: 13vw;
+  right: 5vw;
 }
 .item:focus{
   outline: none!important;

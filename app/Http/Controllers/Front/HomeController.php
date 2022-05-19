@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
-        view()->share('category', Category::inRandomOrder()->get());
+        // view()->share('category', Category::inRandomOrder()->get());
         view()->share('info', Article::get());
     }
 

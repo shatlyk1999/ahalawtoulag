@@ -8,9 +8,11 @@
                 <div class="event_box move fadeInUp">
                     <div class="imagebg-box">
                         <div class="bg1">
-                            <h4 style="border-bottom: 1px solid green;
-                            color:green; display: inline-block">@lang('messages.shipping'):</h4>
-                            <p>@lang('messages.freight')</p>
+                            <a href="{{route('service')}}">
+                                <h4 style="border-bottom: 1px solid green;
+                                color:green; display: inline-block">@lang('messages.shipping'):</h4>
+                                <p>@lang('messages.freight')</p>
+                            </a>
                         </div>
                     </div>
                 </div>

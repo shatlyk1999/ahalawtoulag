@@ -7,8 +7,8 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-6 col-lg-3 cards">
-                    <a href="">
-                        <div class="func_cards box-tomi move">
+                    <a href="{{route('services')}}">
+                        <div class="func_cards box-lara zoomIn">
                             <div class="func_card_title ">
                                 <i class="service-one__icon  fa fa-database"></i>
                             </div>
@@ -17,8 +17,8 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-3 cards">
-                    <a href="">
-                        <div class="func_cards box-koimana move">
+                    <a href="{{route('services')}}">
+                        <div class="func_cards box-koire zoomIn">
                             <div class="func_card_title">
                                 <i class="service-one__icon  fa fa-shield"></i>
                             </div>
@@ -27,8 +27,8 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-3 cards">
-                    <a href="">
-                        <div class="func_cards box-koire move">
+                    <a href="{{route('services')}}">
+                        <div class="func_cards box-koimana zoomIn">
                             <div class="func_card_title">
                                 <i class="service-one__icon  fa fa-life-ring"></i>
                             </div>
@@ -37,10 +37,10 @@
                     </a>
                 </div>
                 <div class="col-md-6 col-lg-3 cards">
-                    <a href="">
-                        <div class="func_cards box-lara move">
+                    <a href="{{route('services')}}">
+                        <div class="func_cards box-koire zoomIn"> <!-- box-tomi -->
                             <div class="func_card_title">
-                                <i class="service-one__icon  fa fa-users"></i>
+                                <i class="service-one__icon fa fa-users"></i>
                             </div>
                             <h3>@lang('messages.Experienced drivers')</h3>
                         </div>
