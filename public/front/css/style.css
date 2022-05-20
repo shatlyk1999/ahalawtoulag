@@ -4204,6 +4204,7 @@ body{
 }
 
 .about-content{
+    text-align: justify;
     margin: 10px 0px 35px 0px;
 }
 
@@ -4215,12 +4216,12 @@ body{
 }
 
 .about-content-img{
-    height: 500px;
     width: 100%;
     margin-top: 30px;
 }
 
 .newsView-title{
+    text-align: initial;
     font-weight: bold;
     color: #333333;
 }

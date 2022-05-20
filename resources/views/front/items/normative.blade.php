@@ -24,9 +24,7 @@
                     <div class="row">
                         <div class="v-n-item">
                             <span class="v-n-time">{{$item->date}}</span>
-                            <a href="{{route('newsView', $item->id)}}">
-                                <h5 class="v-n-title-15 uppercase">{{$item->title}}</h5>
-                            </a>
+                            <h5 class="v-n-title-15 uppercase">{{$item->title}}</h5>
                             <p class="v-n-content">{{$item->description}}</p>
                             <a href="storage/{{$item->pdf[0]}}" class="normative-a">@lang('messages.download')</a>
                         </div>
