@@ -68,17 +68,7 @@ class OrderTruckCrudController extends CrudController
     {
         CRUD::setValidation(OrderTruckRequest::class);
 
-        CRUD::field('roly');
-        CRUD::field('name');
-        CRUD::field('edaraady');
-        CRUD::field('email');
-        CRUD::field('orderphone');
-        CRUD::field('from');
-        CRUD::field('to');
-        CRUD::field('datetime');
-        CRUD::field('yuk_gornush');
-        CRUD::field('yuk_agram');
-        CRUD::field('note');
+        
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
