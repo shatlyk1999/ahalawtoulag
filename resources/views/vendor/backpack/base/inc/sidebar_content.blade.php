@@ -8,3 +8,6 @@
 <li class='nav-item'><a class='nav-link' href="{{ backpack_url('contact') }}"><i class='nav-icon la la-question'></i> Contacts</a></li>
 <li class='nav-item'><a class='nav-link' href="{{ backpack_url('normative') }}"><i class='nav-icon la la-question'></i> Normatives</a></li>
 <li class='nav-item'><a class='nav-link' href="{{ route('statistica') }}"><i class='nav-icon la la-question'></i>Statistica</a></li>
+<!-- <li class='nav-item'><a class='nav-link' href="{{ backpack_url('normal') }}"><i class='nav-icon la la-question'></i> Adaty yuk gornush</a></li> -->
+<li class='nav-item'><a class='nav-link' href="{{ backpack_url('order-bus') }}"><i class='nav-icon la la-question'></i> Order buses</a></li>
+<li class='nav-item'><a class='nav-link' href="{{ backpack_url('order-truck') }}"><i class='nav-icon la la-question'></i> Order trucks</a></li>

@@ -21,6 +21,8 @@
     <link href="{{asset('front/css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('front/css/simple-calendar.css')}}" rel="stylesheet" />
     <link href="{{asset('front/css/demo.css')}}" rel="stylesheet" />
+    <link href="{{asset('front/css/order.css')}}" rel="stylesheet" />
+    <link href="{{asset('datetimepicker-master/build/jquery.datetimepicker.min.css')}}" rel="stylesheet" />
     <link href="{{asset('front/css/style-responsive.css')}}" rel="stylesheet" />
     <link href="{{asset('front/assets/awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
 </head>
@@ -67,6 +69,7 @@
                 <li class="underline"><a href="{{route('services')}}">@lang('messages.services')</a></li>
                 <li class="underline"><a href="{{route('normative')}}">@lang('messages.normative')</a></li>
                 <li class="underline"><a href="{{route('news')}}">@lang('messages.news')</a></li>
+                <li class="underline"><a href="{{route('order')}}">@lang('messages.orders')</a></li>
                 <li class="underline"><a href="{{route('contactpage')}}">@lang('messages.contact')</a></li>
             </ul>
         </div>

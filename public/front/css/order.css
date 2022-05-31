@@ -1,0 +1,112 @@
+.order{
+    margin-top: 65px;
+    margin-bottom: 55px;
+}
+
+.conseption{
+    margin-bottom: 45px;
+}
+
+.conseption ol{
+    list-style: inside;
+}
+
+.order a{
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #6CC654;
+    color: #fff;
+    font-weight: 600;
+}
+
+.order a:hover{
+    text-decoration: underline;
+}
+
+.conseption button{
+    margin-top: 30px;
+    background-color: #428bca;
+}
+
+.conseption button:hover{
+    background-color: #428bca;
+    text-decoration: underline;
+}
+
+.conseption button:focus{
+    background-color: #428bca;
+    text-decoration: underline;
+    outline: none;
+}
+
+.conseption button:active:focus, .conseption button:active:hover{
+    outline: none!important;
+}
+
+.conseption button:focus-visible{
+    outline: none;
+}
+
+input[type="radio"]{
+    margin: 4px 4px 8px 0px;
+}
+
+.conseption h4{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.number_input{
+    border-color: #428bca;
+    height: 40px;
+    width: 150px;
+}
+
+#normal_y_g{
+    width: 70%;
+    height: 40px;
+    font-size: 18px;
+    border-color: #428bca;
+}
+
+.order_bus_h2{
+    text-align: center;
+}
+
+.order_bus label{
+    width: 96%;
+    font-size: 17px;
+    float: right;
+}
+
+.order_bus input{
+    width: 96%;
+    border-radius: 8px!important;
+    border-color: #6CC654;
+    height: 50px;
+    letter-spacing: 1.1px;
+    outline: none;
+}
+
+.order_bus input:focus-visible{
+    border-color: #6CC654;
+    outline: none;
+}
+
+.orderNote{
+    width: 96%;
+    border-radius: 8px!important;
+    border-color: #6CC654;
+    height: 100px;
+    letter-spacing: 1.1px;
+    outline: none;
+}
+
+.orderyuk{
+    width: 96%;
+    border-radius: 8px!important;
+    border-color: #6CC654;
+    height: 50px;
+    letter-spacing: 1.1px;
+    outline: none;
+}

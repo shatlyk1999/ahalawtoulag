@@ -58,6 +58,8 @@
 <script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('front/js/sweetalert2.min.js')}}"></script>
 <script src="{{asset('front/js/jssor.slider.min.js')}}"></script>
+<script src="/Inputmask-5.x/dist/jquery.inputmask.js"></script>
+<script src="{{asset('datetimepicker-master/build/jquery.datetimepicker.full.min.js')}}"></script>
 <script src="{{asset('front/js/myscripts.js')}}"></script>
 <script src="{{asset('front/js/yandexmap.js')}}"></script>
 <script src="{{asset('front/js/custom.js')}}"></script>

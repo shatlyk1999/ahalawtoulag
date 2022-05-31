@@ -29,7 +29,24 @@ Route::group([
     Route::get('/normative', 'Front\HomeController@normative')->name('normative');
     Route::post('/contact', 'Front\HomeController@contactpost')->name('contact');
     Route::get('/contactpage', 'Front\HomeController@contact')->name('contactpage');
+    Route::get('/order', 'Front\OrderController@index')->name('order');
 });
 
 Route::get('/statistica', 'Front\HomeController@statistica')->name('statistica')->middleware('auth');
 
+Route::get('/choose', 'Front\OrderController@choose')->name('choose');
+Route::get('/chekout', 'Front\OrderController@chekout')->name('chekout');
+Route::post('/chekout', 'Front\OrderController@chekout')->name('chekout');
+Route::get('/legal', 'Front\OrderController@legal')->name('legal');
+Route::post('/legal', 'Front\OrderController@legal')->name('legal');
+Route::get('/budget', 'Front\OrderController@budget')->name('budget');
+Route::post('/budget', 'Front\OrderController@budget')->name('budget');
+Route::get('/weight', 'Front\OrderController@weight')->name('weight');
+Route::post('/weight', 'Front\OrderController@weight')->name('weight');
+Route::get('/truck', 'Front\OrderController@truck')->name('truck');
+Route::post('/truck', 'Front\OrderController@truck')->name('truck');
+Route::get('/order_bus', 'Front\OrderController@order_bus')->name('order_bus');
+Route::post('/order_bus', 'Front\OrderController@order_bus')->name('order_bus');
+Route::get('/order_truck', 'Front\OrderController@order_truck')->name('order_truck');
+Route::post('/order_truck', 'Front\OrderController@order_truck')->name('order_truck');
+Route::get('/physical', 'Front\OrderController@physical')->name('physical');

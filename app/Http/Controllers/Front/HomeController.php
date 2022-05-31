@@ -179,7 +179,7 @@ class HomeController extends Controller
             // dd($v);
             $q->where('date', '>=', $v)
             ->where('date', '<', "$v 23:59:59");
-        })->orderBy('date', 'DESC')->paginate(25);
+        })->orderBy('date', 'DESC')->paginate(100);
         $filterDate = $request->date;
 
         return view('stat.metrica', compact('metrica', 'filterDate'));
