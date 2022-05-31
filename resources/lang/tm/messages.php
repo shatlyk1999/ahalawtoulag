@@ -93,5 +93,13 @@ return [
     'note' => 'Bellik',
     'enterprise' => 'Edaranyň ady',
     'jogapkarin_ady' => 'Jogapkäriň Familiýasy, ady',
+    'order_ahalawtoulag' => 
+        '
+            <h4 style="font-weight:bold;">Üns beriň!</h4>
+            Edara-kärhanalaryň we raýatlaryň dykgatyna!<br><br>
+            Býujetden sarp edijilere awtomobil ulaglary bilen ýükleri daşamak hyzmaty boýunça nyrhlar 2020-nji
+            ýylyň fewral aýynyň 1-den güýje giren № 17/2-2020 NYRHNAMA esasynda amala aşyrylýar.<br><br>
+            Sargytlar azyndan 24 sagat öňünden edilmelidir.         
+        ',
 
 ];

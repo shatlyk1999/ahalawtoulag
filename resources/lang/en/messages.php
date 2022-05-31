@@ -90,4 +90,12 @@ return [
     'note' => 'Note',
     'enterprice' => 'Enterprise',
     'jogapkarin_ady' => 'Responsible person',
+    'order_ahalawtoulag' => 
+        '
+            <h4 style="font-weight:bold;">Attention!!</h4>
+            To the attention of enterprises and citizens!<br><br>
+            The cost for cargo transportation services for budget-funded enterprises is determined based on
+            REGULATION No. 17/2-2020 of February 1, 2020.<br><br>
+            Orders need to be placed at least 24 hours in advance.         
+        ',
 ];
