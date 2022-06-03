@@ -27,7 +27,7 @@
                         <li class="">{{$inf->phoneNumber}}</li>
                         <li class="">{{$inf->faxNumber}}</li>
                     </ul>
-                    <h4 style="padding-top:10px;">@lang('messages.Phone') | @lang('messages.fax')</h4>
+                    <h4 style="padding-top:10px;">@lang('messages.email')</h4>
                     <ul role="tablist">
                         <li class="">{!!($inf->domain)!!}</li>
                     </ul>

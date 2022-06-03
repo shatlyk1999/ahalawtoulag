@@ -40,10 +40,11 @@
                 </div>
                 <div class="col-md-6" style="margin-bottom:30px">
                     <label for="yuk_gornush">@lang('messages.yuk_gornush')<br></label>
-                    <select name="yuk_gornush" id="2" class="orderyuk">
+                    <input type="text" yuk_gornush="from" placeholder="@lang('messages.yuk_gornush')" class="form-control input-lg" required="required">
+                    <!-- <select name="yuk_gornush" id="2" class="orderyuk">
                         <option value="adaty">@lang('messages.adaty')</option>
                         <option value="howply">@lang('messages.howply')</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col-md-6" style="margin-bottom:30px">
                     <label for="to">@lang('messages.to')<br></label>

@@ -110,3 +110,20 @@ input[type="radio"]{
     letter-spacing: 1.1px;
     outline: none;
 }
+
+
+.btn-primary{
+    outline: 5px auto white;
+    outline-offset: -4px;
+}
+
+.btn-primary:focus{
+    outline: 5px auto white;
+    outline-offset: -4px;
+}
+
+.btn-primary:active:focus{
+    background-color: #6CC654;
+    border-color: #6CC654;
+    outline: none;
+}
