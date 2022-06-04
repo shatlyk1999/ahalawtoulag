@@ -20,8 +20,10 @@
             <div class="col-md-12">
                 <div class="about-content">
                     <h1 class="newsView-title">{{$news->title}}</h1>
+                    <a href="{{ asset($news->image) }}">
+                        <img src="{{ asset($news->image) }}" class="about-content-img" alt="about-img">
+                    </a>
                     <p class="about-content-p">{!!($news->content)!!}</p>
-                    <img src="{{ asset($news->image) }}" class="about-content-img" alt="about-img">
                 </div>
             </div>
         </div>
