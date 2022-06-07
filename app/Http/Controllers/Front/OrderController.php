@@ -137,7 +137,7 @@ class OrderController extends Controller
         $email = 'ahalob@awtoulag.gov.tm';
         Mail::to($email)->send(new EmailDemo($mailData));
 
-        return redirect()->route('physical')->with('success', 'Habarynyz bize geldi, garashmagynyzy hayysh edyaris');
+        return redirect()->route('physical')->with('success', 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys.');
     }
 
     public function order_truck(Request $request){
@@ -165,7 +165,7 @@ class OrderController extends Controller
         $email = 'ahalob@awtoulag.gov.tm';
         Mail::to($email)->send(new EmailDemo($mailData));
 
-        return redirect()->route('physical')->with('success', 'Habaryňyz bize geldi, garaşmagyňyzy hayyş edýäris');
+        return redirect()->route('physical')->with('success', 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys');
     }
 
     public function physical(Request $request){
