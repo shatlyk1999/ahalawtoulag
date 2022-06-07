@@ -74,7 +74,7 @@ return [
     'orders' => 'Sargytlar',
     'fiziki' => 'Fiziki şahs',
     'yuridiki' => 'Ýuridiki şahs',
-    'yuk_gornush' => 'Ýükiň görnüşi',
+    'yuk_gornush' => 'Ýüküň görnüşi',
     'byujet' => 'Býujete degişli edara',
     'byujet_dal' => 'Býujete degişli däl edara',
     'adaty' => 'Adaty',
