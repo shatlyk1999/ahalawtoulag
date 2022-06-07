@@ -54,7 +54,7 @@
                             @endforeach
                     </tbody>
                 </table>
-                <div style="text-align:center;margin-bottom:20px;">{{$metrica->onEachSide(0)->links()}}</div>
+                <div style="text-align:center;margin-bottom:20px;">{{$metrica->links()}}</div>
 
     <div class="button-reset" style="padding-top:19px;">
     <h1>{{$filterDate}}</h1>

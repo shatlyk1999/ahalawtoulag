@@ -38,24 +38,42 @@ class OrderTruckCrudController extends CrudController
      * @return void
      */
     protected function setupListOperation()
-    {
-        CRUD::column('roly');
-        CRUD::column('name');
-        CRUD::column('edaraady');
-        CRUD::column('email');
-        CRUD::column('orderphone');
-        CRUD::column('from');
-        CRUD::column('to');
-        CRUD::column('datetime');
-        CRUD::column('yuk_gornush');
-        CRUD::column('yuk_agram');
-        CRUD::column('note');
+    {   
+        $this->crud->addColumn(['name'=>'created_at','type'=>'text', 'label'=>'Sargydyn edilen wagty']);
+        $this->crud->addColumn(['name'=>'roly','type'=>'text', 'label'=>'Sargyt edyanin roly']);
+        $this->crud->addColumn(['name'=>'name','type'=>'text', 'label'=>'Sargyt edyanin ady']);
+        $this->crud->addColumn(['name'=>'email','type'=>'text', 'label'=>'Elektron poctasy']);
+        $this->crud->addColumn(['name'=>'edaraady','type'=>'text', 'label'=>'Edara ady (eger-de edara bolsa)']);
+        $this->crud->addColumn(['name'=>'orderphone','type'=>'text', 'label'=>'Telefon belgisi']);
+        $this->crud->addColumn(['name'=>'from','type'=>'text', 'label'=>'Nireden']);
+        $this->crud->addColumn(['name'=>'to','type'=>'text', 'label'=>'Nira']);
+        $this->crud->addColumn(['name'=>'datetime','type'=>'text', 'label'=>'Barmaly senesi we wagty']);
+        $this->crud->addColumn(['name'=>'yuk_gornush','type'=>'text', 'label'=>'Yukun gornushi']);
+        $this->crud->addColumn(['name'=>'yuk_agram','type'=>'text', 'label'=>'Yukun agramy(tonna)']);
+        $this->crud->addColumn(['name'=>'note','type'=>'text', 'label'=>'Belik']);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
+    }
+
+    protected function setupShowOperation()
+    {   
+        $this->crud->addColumn(['name'=>'created_at','type'=>'text', 'label'=>'Sargydyn edilen wagty']);
+        $this->crud->addColumn(['name'=>'roly','type'=>'text', 'label'=>'Sargyt edyanin roly']);
+        $this->crud->addColumn(['name'=>'name','type'=>'text', 'label'=>'Sargyt edyanin ady']);
+        $this->crud->addColumn(['name'=>'email','type'=>'text', 'label'=>'Elektron poctasy']);
+        $this->crud->addColumn(['name'=>'edaraady','type'=>'text', 'label'=>'Edara ady (eger-de edara bolsa)']);
+        $this->crud->addColumn(['name'=>'orderphone','type'=>'text', 'label'=>'Telefon belgisi']);
+        $this->crud->addColumn(['name'=>'from','type'=>'text', 'label'=>'Nireden']);
+        $this->crud->addColumn(['name'=>'to','type'=>'text', 'label'=>'Nira']);
+        $this->crud->addColumn(['name'=>'datetime','type'=>'text', 'label'=>'Barmaly senesi we wagty']);
+        $this->crud->addColumn(['name'=>'yuk_gornush','type'=>'text', 'label'=>'Yukun gornushi']);
+        $this->crud->addColumn(['name'=>'yuk_agram','type'=>'text', 'label'=>'Yukun agramy(tonna)']);
+        $this->crud->addColumn(['name'=>'note','type'=>'text', 'label'=>'Belik']);
+        
     }
 
     /**

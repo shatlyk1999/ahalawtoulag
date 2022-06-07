@@ -39,15 +39,42 @@ class OrderBusCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
-
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        //CRUD::setFromDb(); // columns
+        
+        $this->crud->addColumn(['name'=>'created_at','type'=>'text', 'label'=>'Sargydyn edilen wagty']);
+        $this->crud->addColumn(['name'=>'roly','type'=>'text', 'label'=>'Sargyt edyanin roly']);
+        $this->crud->addColumn(['name'=>'name','type'=>'text', 'label'=>'Sargyt edyanin ady']);
+        $this->crud->addColumn(['name'=>'email','type'=>'text', 'label'=>'Elektron poctasy']);
+        $this->crud->addColumn(['name'=>'edaraady','type'=>'text', 'label'=>'Edara ady(eger edara bolsa)']);
+        $this->crud->addColumn(['name'=>'orderphone','type'=>'text', 'label'=>'Telefon belgisi']);
+        $this->crud->addColumn(['name'=>'from','type'=>'text', 'label'=>'Nireden']);
+        $this->crud->addColumn(['name'=>'to','type'=>'text', 'label'=>'Nira']);
+        $this->crud->addColumn(['name'=>'datetime','type'=>'text', 'label'=>'Barmaly senesi we wagty']);
+        $this->crud->addColumn(['name'=>'duration','type'=>'text', 'label'=>'Sargydyn dowamlylygy']);
+        $this->crud->addColumn(['name'=>'personnumber','type'=>'text', 'label'=>'Adam sany']);
+        $this->crud->addColumn(['name'=>'note','type'=>'text', 'label'=>'Belik']);
+       
     }
 
+
+    protected function setupShowOperation()
+    {
+        //CRUD::setFromDb(); // columns
+        
+        $this->crud->addColumn(['name'=>'created_at','type'=>'text', 'label'=>'Sargydyn edilen wagty']);
+        $this->crud->addColumn(['name'=>'roly','type'=>'text', 'label'=>'Sargyt edyanin roly']);
+        $this->crud->addColumn(['name'=>'name','type'=>'text', 'label'=>'Sargyt edyanin ady']);
+        $this->crud->addColumn(['name'=>'email','type'=>'text', 'label'=>'Elektron poctasy']);
+        $this->crud->addColumn(['name'=>'edaraady','type'=>'text', 'label'=>'Edara ady(eger edara bolsa)']);
+        $this->crud->addColumn(['name'=>'orderphone','type'=>'text', 'label'=>'Telefon belgisi']);
+        $this->crud->addColumn(['name'=>'from','type'=>'text', 'label'=>'Nireden']);
+        $this->crud->addColumn(['name'=>'to','type'=>'text', 'label'=>'Nira']);
+        $this->crud->addColumn(['name'=>'datetime','type'=>'text', 'label'=>'Barmaly senesi we wagty']);
+        $this->crud->addColumn(['name'=>'duration','type'=>'text', 'label'=>'Sargydyn dowamlylygy']);
+        $this->crud->addColumn(['name'=>'personnumber','type'=>'text', 'label'=>'Adam sany']);
+        $this->crud->addColumn(['name'=>'note','type'=>'text', 'label'=>'Belik']);
+       
+    }
     /**
      * Define what happens when the Create operation is loaded.
      * 
@@ -58,6 +85,17 @@ class OrderBusCrudController extends CrudController
     {
         CRUD::setValidation(OrderBusRequest::class);
 
+        // $this->crud->addField(['name'=>'created_at','type'=>'text', 'label'=>'Sargydyn edilen wagty']);
+        // $this->crud->addField(['name'=>'roly','type'=>'text', 'label'=>'Sargyt edyanin roly']);
+        // $this->crud->addField(['name'=>'name','type'=>'text', 'label'=>'Sargyt edyanin ady']);
+        // $this->crud->addField(['name'=>'email','type'=>'text', 'label'=>'Elektron poctasy']);
+        // $this->crud->addField(['name'=>'orderphone','type'=>'text', 'label'=>'Telefon belgisi']);
+        // $this->crud->addField(['name'=>'from','type'=>'text', 'label'=>'Nireden']);
+        // $this->crud->addField(['name'=>'to','type'=>'text', 'label'=>'Nira']);
+        // $this->crud->addField(['name'=>'datetime','type'=>'text', 'label'=>'Sargydyn wagty']);
+        // $this->crud->addField(['name'=>'duration','type'=>'text', 'label'=>'Sargydyn dowamlylygy']);
+        // $this->crud->addField(['name'=>'personnumber','type'=>'text', 'label'=>'Adam sany']);
+        // $this->crud->addField(['name'=>'note','type'=>'text', 'label'=>'Belik']);
         //CRUD::setFromDb(); // fields
 
         /**

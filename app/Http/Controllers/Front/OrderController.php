@@ -141,25 +141,25 @@ class OrderController extends Controller
     }
 
     public function order_truck(Request $request){
-        $order_bus = new OrderTruck;
+        $order_truck = new OrderTruck;
         
-        $order_bus->roly = $request->fizik_yuridik;
-        $order_bus->name = $request->name;
+        $order_truck->roly = $request->fizik_yuridik;
+        $order_truck->name = $request->name;
         if($request->edaraady != null){
-            $order_bus->edaraady = $request->edaraady;
+            $order_truck->edaraady = $request->edaraady;
         }
         else{
-            $order_bus->edaraady = 'null';
+            $order_truck->edaraady = 'null';
         };
-        $order_bus->email = $request->email;
-        $order_bus->orderphone = $request->phone;
-        $order_bus->from = $request->from;
-        $order_bus->to = $request->to;
-        $order_bus->datetime = $request->datetime;
-        $order_bus->yuk_gornush =$request->yuk_gornush;
-        $order_bus->yuk_agram = $request->yuk_agram;
-        $order_bus->note = $request->note;
-        $order_bus->save();
+        $order_truck->email = $request->email;
+        $order_truck->orderphone = $request->phone;
+        $order_truck->from = $request->from;
+        $order_truck->to = $request->to;
+        $order_truck->datetime = $request->datetime;
+        $order_truck->yuk_gornush = $request->yuk_gornush;
+        $order_truck->yuk_agram = $request->yuk_agram;
+        $order_truck->note = $request->note;
+        $order_truck->save();
 
         $mailData = $request->all();
         $email = 'ahalob@awtoulag.gov.tm';
