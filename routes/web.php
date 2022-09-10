@@ -16,7 +16,7 @@ use App\Http\Contollers\Front\HomeController;
 */
 
 Auth::routes();
-
+Route::get('rss', 'RssFeedController@rss');
 Route::group([
     'middleware' => 'metrica'
 ], function(){

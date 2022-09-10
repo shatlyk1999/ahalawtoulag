@@ -35,6 +35,10 @@
                <div class="col-md-4"style="margin-top:15px;">
                     <h4>@lang('messages.address')</h4>
                     <p>{{$inf->address}}</p>
+                    <p> <a href="/rss">
+                        <i class="fa fa-rss"></i>
+                        &nbsp;&nbsp;<b>RSS</b> 
+                    </a>     </p>
                     <p style="font-size:13px;padding-top:12px;letter-spacing:0.7px;">
                         <span style="color:#B1B1B1;font-weight:bold;">Developed by:<span>
                         <span style="color:#C4C4C4;padding-left:3px;">TurkmenPortal</span>
