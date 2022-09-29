@@ -50,6 +50,7 @@
                     <label for="note">@lang('messages.note')</label>
                     <textarea name="note" placeholder="@lang('messages.note')" class="orderNote" required="required"></textarea>
                 </div>
+                <input type="hidden" name="awto" value="{{$awto}}">
                 <div class="col-md-12" style="text-align:center">
                     <button type="submit" class="btn btn-primary">@lang('messages.send')</button>
                 </div>

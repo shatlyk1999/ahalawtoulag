@@ -94,6 +94,7 @@ input[type="radio"]{
 }
 
 .orderNote{
+    padding: 10px 12px;
     width: 96%;
     border-radius: 8px!important;
     border-color: #6CC654;
@@ -126,4 +127,27 @@ input[type="radio"]{
     background-color: #6CC654;
     border-color: #6CC654;
     outline: none;
+}
+
+.buses .card{
+    margin: 90px 40px 150px;
+}
+.buses .card h5{
+    display: inline-block;
+}
+.buses .card span.fl_right{
+    float: right;
+}
+div.buses .buses_btn{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #008000!important;
+    border-color: #008000!important;
+    text-transform: none!important;
+}
+div.buses .card_p{
+    display: inline-block;
+}
+div.buses .card-body{
+    margin-bottom: 30px;
 }

@@ -45,19 +45,34 @@ class OrderController extends Controller
         return view('front.order.chekout', compact('awtobus_yuk'));        //fiziki-yuridiki ugratya
     }
 
+    public function awto(Request $request)
+    {
+        $awtobus_yuk = $request->awtobus_yuk;
+        $fizik_yuridik = $request->roles; 
+        if($awtobus_yuk == 'yuk'){
+            return view('front.order.yuk', compact('awtobus_yuk', 'fizik_yuridik'));            
+        }
+        if($awtobus_yuk == 'awtobus' && $fizik_yuridik == 'yuridiki'){
+            return view('front.order.yuridiki_awto', compact('awtobus_yuk', 'fizik_yuridik'));            
+        }
+        return view('front.order.awto', compact('awtobus_yuk','fizik_yuridik'));
+    }
 
     public function legal(Request $request)
     {
         $awtobus_yuk = $request->awtobus_yuk;
         // $request->session()->forget('test.fizyuridik');
         // $request->session()->push('test.fizyuridik', $request->roles);
-        $fizik_yuridik = $request->roles;       //fizik-yada-yuridik
-
-        if($request->awtobus_yuk == 'awtobus' && $fizik_yuridik == 'fiziki'){
-            return view('front.order.order_bus', compact('awtobus_yuk', 'fizik_yuridik'));            
+        $fizik_yuridik = $request->fizik_yuridik;       //fizik-yada-yuridik
+        $awto = $request->bus;
+        if($awtobus_yuk == 'awtobus' && $fizik_yuridik == 'fiziki'){
+            return view('front.order.order_bus', compact('awtobus_yuk', 'fizik_yuridik','awto'));            
         }
-        elseif($request->awtobus_yuk == 'awtobus' && $fizik_yuridik == 'yuridiki'){
-            return view('front.order.order_bus2', compact('awtobus_yuk', 'fizik_yuridik')); 
+        elseif($request->awtobus_yuk == 'awtobus' && $fizik_yuridik == 'bus_byujet_dal'){
+            return view('front.order.order_bus2', compact('awtobus_yuk', 'fizik_yuridik','awto')); 
+        }
+        elseif($request->awtobus_yuk == 'awtobus' && $fizik_yuridik == 'bus_byujet'){
+            return view('front.order.order_bus2', compact('awtobus_yuk', 'fizik_yuridik','awto')); 
         }
         elseif($request->awtobus_yuk == 'yuk' && $fizik_yuridik == 'fiziki'){
             return view('front.order.order_truck', compact('awtobus_yuk', 'fizik_yuridik')); 

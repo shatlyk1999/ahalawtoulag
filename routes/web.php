@@ -37,6 +37,8 @@ Route::get('/statistica', 'Front\HomeController@statistica')->name('statistica')
 Route::get('/choose', 'Front\OrderController@choose')->name('choose');
 Route::get('/chekout', 'Front\OrderController@chekout')->name('chekout');
 Route::post('/chekout', 'Front\OrderController@chekout')->name('chekout');
+Route::get('/awto', 'Front\OrderController@awto')->name('awto');
+Route::post('/awto', 'Front\OrderController@awto')->name('awto');
 Route::get('/legal', 'Front\OrderController@legal')->name('legal');
 Route::post('/legal', 'Front\OrderController@legal')->name('legal');
 Route::get('/budget', 'Front\OrderController@budget')->name('budget');
