@@ -149,7 +149,9 @@ class OrderController extends Controller
         $order_bus->save();
 
         $mailData = $request->all();
-        $email = 'ahalob@awtoulag.gov.tm';
+
+        $email = 'ahalob@sanly.tm';
+
         Mail::to($email)->send(new EmailDemo($mailData));
 
         return redirect()->route('physical')->with('success', 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys.');

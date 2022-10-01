@@ -39,7 +39,7 @@
 @endif
 <br>
 @if(isset($mailData['personNumber']))
-    'Adam snay: ' {{$mailData['personNumber']}}
+    'Adam sany: ' {{$mailData['personNumber']}}
 @endif
 <br>
 @if(isset($mailData['yuk_gornush']))

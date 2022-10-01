@@ -20,6 +20,7 @@ class EmailDemo extends Mailable
      */
     public function __construct($mailData)
     {
+        $this->subject('Sargyt');
         $this->mailData = $mailData;
     }
 
