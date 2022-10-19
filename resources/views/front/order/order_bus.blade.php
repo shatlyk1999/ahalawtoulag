@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <h2 class="order_bus_h2">@lang('messages.order')</h2>
-            <form action="{{route('order_bus')}}" method="post" enctype='multipart/form-data'>
+            <form action="{{route('approve')}}" method="post" enctype='multipart/form-data'>
             @csrf
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">
@@ -51,6 +51,7 @@
                     <textarea name="note" placeholder="@lang('messages.note')" class="orderNote" required="required"></textarea>
                 </div>
                 <input type="hidden" name="awto" value="{{$awto}}">
+                <input type="hidden" name="price" value="{{$price}}">
                 <div class="col-md-12" style="text-align:center">
                     <button type="submit" class="btn btn-primary">@lang('messages.send')</button>
                 </div>

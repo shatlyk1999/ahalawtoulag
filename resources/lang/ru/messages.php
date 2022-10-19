@@ -89,6 +89,7 @@ return [
     'personNumber' => 'Число людей ',
     'note' => 'ПРИМЕЧАНИЕ',
     'enterprise' => 'Предприятие',
+    'approve'=>'Одобрить',
     'jogapkarin_ady' => 'Ф.И.О. ответственного',
     'order_ahalawtoulag' => 
         '

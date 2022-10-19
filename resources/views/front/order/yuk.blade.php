@@ -20,6 +20,7 @@
             <input type="hidden" name="bus" value="KAMAZ-6520">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">
+            <input type="hidden" name="price" value="130">
             <p>
             <button type="submit" class="btn btn-success buses_btn">@lang('messages.choose')</button>
             </p>
@@ -40,6 +41,7 @@
             <input type="hidden" name="bus" value="KAMAZ-65115">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">
+            <input type="hidden" name="price" value="105">
             <p>
             <button type="submit" class="btn btn-success buses_btn">@lang('messages.choose')</button>
             </p>
@@ -61,6 +63,7 @@
             <input type="hidden" name="bus" value="KAMAZ-65117">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">
+            <input type="hidden" name="price" value="115">
             <p>
             <button type="submit" class="btn btn-success buses_btn">@lang('messages.choose')</button>
             </p>
@@ -82,6 +85,7 @@
             <input type="hidden" name="bus" value="Mersedes_Bens">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">
+            <input type="hidden" name="price" value="160">
             <p>
             <button type="submit" class="btn btn-success buses_btn">@lang('messages.choose')</button>
             </p>

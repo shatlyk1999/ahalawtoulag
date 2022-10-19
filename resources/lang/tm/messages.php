@@ -44,6 +44,7 @@ return [
     'subject'=>'HYZMATLAR',
     'message'=>'TEKST',
     'send'=>'UGRATMAK',
+    'approve'=>'TASSYKLAMAK',
     'choose'=>'SAÝLAMAK',
     'budgetary' => 'Býujete degişli edara',
     'non-budgetary' => 'Býujete degişli däl edara',

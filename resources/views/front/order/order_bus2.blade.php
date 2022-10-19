@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <h2 class="order_bus_h2">@lang('messages.order')</h2>
-            <form action="{{route('order_bus')}}" method="post" enctype='multipart/form-data'>
+            <form action="{{route('order_bus_yuridiki')}}" method="post" enctype='multipart/form-data'>
             @csrf
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
             <input type="hidden" name="fizik_yuridik" value="{{$fizik_yuridik}}">

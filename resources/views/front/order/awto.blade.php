@@ -18,8 +18,10 @@
             <p class="card_p"><b>Bahasy :</b></p>
             @if ($fizik_yuridik == 'bus_byujet')
             <span class="fl_right">1 sagat | 80,00 tmt </span><br>
+            <input type="hidden" name="price" value="80">
             @else
             <span class="fl_right">1 sagat | 130,00 tmt </span><br>
+            <input type="hidden" name="price" value="130">
             @endif
             <input type="hidden" name="bus" value="hunday">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
@@ -42,8 +44,10 @@
             <p class="card_p"><b>Bahasy :</b></p>
             @if ($fizik_yuridik == 'bus_byujet')
             <span class="fl_right">1 sagat | 70,00 tmt </span><br>
+            <input type="hidden" name="price" value="70">
             @else
             <span class="fl_right">1 sagat | 110,00 tmt </span><br>
+            <input type="hidden" name="price" value="100">
             @endif
             <input type="hidden" name="bus" value="iran">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
@@ -66,8 +70,10 @@
             <p class="card_p"><b>Bahasy :</b></p>
             @if ($fizik_yuridik == 'bus_byujet')
             <span class="fl_right">1 sagat | 50,00 tmt </span><br>
+            <input type="hidden" name="price" value="50">
             @else
             <span class="fl_right">1 sagat | 85,00 tmt </span><br>
+            <input type="hidden" name="price" value="85">
             @endif
             <input type="hidden" name="bus" value="paz">
             <input type="hidden" name="awtobus_yuk" value="{{$awtobus_yuk}}">
