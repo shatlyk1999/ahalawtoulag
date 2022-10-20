@@ -175,6 +175,9 @@ class HomeController extends Controller
 
     public function Statistica(Request $request)
     {
+        if($request->date == null){
+            $request->date = date('Y-m-d');
+        }
         $metrica = Metrica::when($request->date, function ($q, $v){
             // dd($v);
             $q->where('date', '>=', $v)
