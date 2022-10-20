@@ -33,6 +33,28 @@
     <div style="width: 100%" class="container">
         <h3 class="stat_center">Статистика посещений по IP</h3>
             <div id="stat_ip">
+                
+
+                <h3 class="text-center">Сформировать за указанную дату</h3>
+                <br><br>
+                <div id="container" class="calendar-container" style="display: inline-block;margin-left: 20%">
+                </div>
+                <div class="button-reset" style="float: right;margin-right: 20%;padding-top: 100px;display: inline-block;">
+                    <h1>{{date('d-m-Y', strtotime($filterDate))}}</h1>
+                    <h4>
+                        {{ 'Всего посещение за период -- ' . count($metrica)  }}
+                    </h4>
+                    <h4>
+                        {{ 'Всего посетителей за период -- ' . count($ip)  }}
+                    </h4>
+                    <br>
+                        <a href="{{route('statistica')}}">
+                            <button type="submit">Сбросить фильтры</button>
+                        </a>
+                    </div>
+           
+           
+                    <hr>
                 <table class="get_table">
                     <thead>
                         <tr>
@@ -56,17 +78,8 @@
                 </table>
                 <div style="text-align:center;margin-bottom:20px;">{{$metrica->links()}}</div>
 
-    <div class="button-reset" style="padding-top:19px;">
-    <h1>{{$filterDate}}</h1>
-        <a href="{{route('statistica')}}">
-            <button type="submit">Сбросить фильтры</button>
-        </a>
-    </div>
-    <hr>
 
-    <h3>Сформировать за указанную дату</h3>
-    <div id="container" class="calendar-container">
-    </div>
+
 
 </div>
 </div> 

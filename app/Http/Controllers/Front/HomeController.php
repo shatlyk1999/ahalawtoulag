@@ -180,9 +180,14 @@ class HomeController extends Controller
             $q->where('date', '>=', $v)
             ->where('date', '<', "$v 23:59:59");
         })->orderBy('date', 'DESC')->paginate(100);
+        $ip = Metrica::select('ip')->when($request->date, function ($q, $v){
+            // dd($v);
+            $q->where('date', '>=', $v)
+            ->where('date', '<', "$v 23:59:59");
+        })->distinct()->get();
         $filterDate = $request->date;
 
-        return view('stat.metrica', compact('metrica', 'filterDate'));
+        return view('stat.metrica', compact('metrica', 'ip','filterDate'));
     }
 
 }
