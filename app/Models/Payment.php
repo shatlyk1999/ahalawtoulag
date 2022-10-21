@@ -111,12 +111,13 @@ class Payment extends Model
                 $url_params['orderNumber'] = $order_num;
                 $this->submitted_order_number = $url_params['orderNumber'];
                 $amount = $this->amount;
+                //$amount = 1;
                 $url_params['currency'] = 934;
                 $url_params['language'] = $merchantInstance->language;
                 $username = $merchantInstance->username;
                 $password = $merchantInstance->password;
                 //$returnUrl = URL::to('payment' , $extra = [$this->submitted_order_number,'status' => 1], $secure = 'https');
-                $returnUrl = 'https://ahalawtoulag.com.tm/checkPayment/'.$this->submitted_order_number;
+                $returnUrl = 'https://ahalawtoulag.com.tm/checkPayment?OrderId='.$this->submitted_order_number;
                // $url_params['failUrl'] = URL::to('payment' , $extra = [$this->submitted_order_number,'status' => 1], $secure = 'https');
 
                 // $url_params['returnUrl'] = URL::to('payment' , $extra = ['merchant_order_number' => $this->merchant_order_number,'status' => 1], $secure = 'https');

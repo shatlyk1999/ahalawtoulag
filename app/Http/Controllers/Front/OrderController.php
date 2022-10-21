@@ -189,10 +189,14 @@ class OrderController extends Controller
 
             if (isset($a)) {
                 if ($a['status'] == 'success') {
+                    $payService['description'] =  "Order Bus";
                     $payService['response_order_id'] =  $a['response_order_id'];        
                     $payService['response_form_url'] =  $a['form_url'];        
                     $payService['response_error_code'] =  'null';
                     $payService['merchant_id'] =  1;
+                    $payService['merchant_order_number'] =  $order_bus->id;
+                    $payService['payment_type_id'] =  1; //Order Bus;
+
                     $payService->save();
                     return redirect($a['form_url']);
                 } else {
@@ -271,10 +275,13 @@ class OrderController extends Controller
         $a = $payService->formatBankRegisterUrl();
         if (isset($a)) {
             if ($a['status'] == 'success') {
+                $payService['description'] =  "Order Truck";
                 $payService['response_order_id'] =  $a['response_order_id'];        
                 $payService['response_form_url'] =  $a['form_url'];        
                 $payService['response_error_code'] =  'null';
                 $payService['merchant_id'] =  1;
+                $payService['merchant_order_number'] =  $order_truck->id;
+                $payService['payment_type_id'] =  2; //Order Truck;
                 $payService->save();
                 return redirect($a['form_url']);
             } else {
@@ -324,4 +331,5 @@ class OrderController extends Controller
     public function physical(Request $request){
         return  view('front.order.physical');
     }
+
 }

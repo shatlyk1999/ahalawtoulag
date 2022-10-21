@@ -61,3 +61,4 @@ Route::get('/order_truck_yuridiki', 'Front\OrderController@order_truck_yuridiki'
 Route::post('/order_truck_yuridiki', 'Front\OrderController@order_truck_yuridiki')->name('order_truck_yuridiki');
 Route::get('/physical', 'Front\OrderController@physical')->name('physical');
 Route::get('/payment', 'Front\PaymentController@payment')->name('payment');
+Route::get('/checkpayment', 'Front\PaymentController@checkpayment')->name('checkpayment');
