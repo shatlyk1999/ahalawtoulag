@@ -117,7 +117,7 @@ class Payment extends Model
                 $username = $merchantInstance->username;
                 $password = $merchantInstance->password;
                 //$returnUrl = URL::to('payment' , $extra = [$this->submitted_order_number,'status' => 1], $secure = 'https');
-                $returnUrl = 'https://ahalawtoulag.com.tm/checkPayment?OrderId='.$this->submitted_order_number;
+                $returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?OrderId='.$this->submitted_order_number;
                // $url_params['failUrl'] = URL::to('payment' , $extra = [$this->submitted_order_number,'status' => 1], $secure = 'https');
 
                 // $url_params['returnUrl'] = URL::to('payment' , $extra = ['merchant_order_number' => $this->merchant_order_number,'status' => 1], $secure = 'https');
