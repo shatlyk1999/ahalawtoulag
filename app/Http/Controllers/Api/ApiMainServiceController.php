@@ -59,7 +59,7 @@ class ApiMainServiceController extends Controller
         ]);
     }
 
-    public function pay(Request $request)
+    public function order_truck(Request $request)
     {
         $validator = Validator::validate($request->all(),
         [
