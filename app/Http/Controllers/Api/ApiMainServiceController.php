@@ -77,7 +77,7 @@ class ApiMainServiceController extends Controller
             // 'return_url' => 'required|url',
         ]);
          return $request->all();die;
-       
+
     }
 
     public function order_bus(Request $request){
@@ -152,6 +152,74 @@ class ApiMainServiceController extends Controller
         
     }
 
+    public function checkpayment(Request $request)
+    {
+        $message = "";
+        if(isset($_GET['orderId'])) {
+            $payment = Payment::where('response_order_id',$_GET['orderId'])->first();
+            if ($payment) {
+                $username = '202161001030';
+                $password = 'Jnd84Vs20GsncKm';
+                $client  = new Client();
+                $response = $client->post('https://mpi.gov.tm/payment/rest/getOrderStatus.do', [
+                    'form_params' => [
+                        'password' => $password,
+                        'userName' => $username,
+                        'orderId' => $payment->response_order_id,
+                        'language'       => 'ru',
+                    ],
+                    'verify' => false,
+                ]);
+
+                $arr = json_decode($response->getBody(), true);
+
+                return $arr;
+            }
+            abort(404);
+        }
+
+    }
+
+    public function test(){
+        if ($arr['ErrorCode'] == 0 && $arr['OrderStatus']  == 2) {
+            // $this->sendMessage($paymentOffer->phone,'Hormatly müşderi sizin tölegiňiz üstünlikli geçdi!');
+            $payment->status = 1;
+            $arr['cardholderName'] =$payment->create_username;
+            if (isset($arr['ErrorMessage'])) {
+                $message = $arr['ErrorMessage'];
+            } else {
+                $message = 'Payment was successful';
+            }
+            // return $payment->status;
+            $payment->save();
+            if($payment->payment_type_id == 1){
+                $mailData = OrderBus::where('id',$payment['merchant_order_number'])->get();
+            }
+
+            if($payment->payment_type_id == 2){
+                $mailData = OrderTruck::where('id',$payment['merchant_order_number'])->get();
+            }
+
+            $email = 'ahalob@sanly.tm';
+
+            Mail::to($email)->send(new EmailDemo($mailData));
+
+return redirect()->route('physical')->with('success', 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys.');
+            // if ($payment->return_url){
+            // return redirect($payRoute.'?msg=success');
+            // }
+        } else {
+            if (strlen(trim($message)) == 0)
+            $message .= 'Payment was not successful';
+            $payment->status = 2;
+            $payment->save();
+
+            // if ($payment->return_url){
+        return redirect()->route('physical')->with('danger', 'Töleg amala aşmady');
+
+            // }
+        }
+    }
 
 
 }
