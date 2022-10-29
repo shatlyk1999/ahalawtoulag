@@ -11,6 +11,8 @@ use App\Models\Payment;
 use App\Models\OrderTruck;
 use Illuminate\Support\Str;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailDemo;
 
 
 
@@ -173,7 +175,44 @@ class ApiMainServiceController extends Controller
 
                 $arr = json_decode($response->getBody(), true);
 
-                return $arr;
+                if ($arr['ErrorCode'] == 0 && $arr['OrderStatus']  == 2) {
+                    // $this->sendMessage($paymentOffer->phone,'Hormatly müşderi sizin tölegiňiz üstünlikli geçdi!');
+                    $payment->status = 1;
+                    if (isset($arr['ErrorMessage'])) {
+                        $message = $arr['ErrorMessage'];
+                    } else {
+                        $message = 'Payment was successful';
+                    }
+                    // return $payment->status;
+                    $payment->save();
+                    if($payment->payment_type_id == 1){
+                        $mailData = OrderBus::where('id',$payment['merchant_order_number'])->get();
+                    }
+        
+                    if($payment->payment_type_id == 2){
+                        $mailData = OrderTruck::where('id',$payment['merchant_order_number'])->get();
+                    }
+        
+                    $email = 'ahalob@sanly.tm';
+        
+                    Mail::to($email)->send(new EmailDemo($mailData));
+                    return response()->json([
+                        "success" => true,
+                        'message' => 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys',
+                    ]);
+                } else {
+                    if (strlen(trim($message)) == 0)
+                    $message .= 'Payment was not successful';
+                    $payment->status = 2;
+                    $payment->save();
+        
+                    // if ($payment->return_url){
+                        return response()->json([
+                            "success" => false,
+                            'message' => 'Töleg amala aşmady',
+                        ]);        
+                    // }
+                }
             }
             abort(404);
         }
@@ -181,44 +220,7 @@ class ApiMainServiceController extends Controller
     }
 
     public function test(){
-        if ($arr['ErrorCode'] == 0 && $arr['OrderStatus']  == 2) {
-            // $this->sendMessage($paymentOffer->phone,'Hormatly müşderi sizin tölegiňiz üstünlikli geçdi!');
-            $payment->status = 1;
-            $arr['cardholderName'] =$payment->create_username;
-            if (isset($arr['ErrorMessage'])) {
-                $message = $arr['ErrorMessage'];
-            } else {
-                $message = 'Payment was successful';
-            }
-            // return $payment->status;
-            $payment->save();
-            if($payment->payment_type_id == 1){
-                $mailData = OrderBus::where('id',$payment['merchant_order_number'])->get();
-            }
 
-            if($payment->payment_type_id == 2){
-                $mailData = OrderTruck::where('id',$payment['merchant_order_number'])->get();
-            }
-
-            $email = 'ahalob@sanly.tm';
-
-            Mail::to($email)->send(new EmailDemo($mailData));
-
-return redirect()->route('physical')->with('success', 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys.');
-            // if ($payment->return_url){
-            // return redirect($payRoute.'?msg=success');
-            // }
-        } else {
-            if (strlen(trim($message)) == 0)
-            $message .= 'Payment was not successful';
-            $payment->status = 2;
-            $payment->save();
-
-            // if ($payment->return_url){
-        return redirect()->route('physical')->with('danger', 'Töleg amala aşmady');
-
-            // }
-        }
     }
 
 
