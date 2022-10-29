@@ -25,6 +25,8 @@ Route::group([
     Route::get('/buses',[ApiMainServiceController::class,'buses'])->name('buses');
     Route::get('/trucks',[ApiMainServiceController::class,'trucks'])->name('trucks');
     Route::post('/order_truck',[ApiMainServiceController::class,'order_truck'])->name('order_truck');
+    Route::post('/order_bus',[ApiMainServiceController::class,'order_bus'])->name('order_bus');
+    Route::post('/checkpayment',[ApiMainServiceController::class,'checkpayment'])->name('checkpayment');
 });
 
 

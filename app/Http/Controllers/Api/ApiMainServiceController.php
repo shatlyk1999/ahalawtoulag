@@ -6,6 +6,13 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Controller;
+use App\Models\OrderBus;
+use App\Models\Payment;
+use App\Models\OrderTruck;
+use Illuminate\Support\Str;
+use GuzzleHttp\Client;
+
+
 
 class ApiMainServiceController extends Controller
 {
@@ -71,6 +78,78 @@ class ApiMainServiceController extends Controller
         ]);
          return $request->all();die;
        
+    }
+
+    public function order_bus(Request $request){
+        $order_bus = new OrderBus;
+        $order_bus->roly = $request->fizik_yuridik;
+        $order_bus->name = $request->name;
+        if($request->edaraady != null){
+            $order_bus->edaraady = $request->edaraady;
+        }
+        else{
+            $order_bus->edaraady = 'null';
+        };
+        $order_bus->email = $request->email;
+        $order_bus->orderphone = $request->phone;
+        $order_bus->from = $request->from;
+        $order_bus->to = $request->to;
+        $order_bus->datetime = $request->datetime;
+        $order_bus->duration =$request->duration;
+        $order_bus->personnumber = $request->personNumber;
+        $order_bus->note = $request->note;
+        if($order_bus->save()){
+            $payService = new Payment();
+            $payService->amount = $request->price;
+            $payService->amount = (int)$payService->amount * 100;    
+            
+            $url_params = [];
+            
+            $randomString = Str::random(6);
+            $full = substr($randomString, 0, 6);
+            $order_num = $full.date("dmYHis");
+            
+            $url_params['orderNumber'] = $order_num;
+            $payService->submitted_order_number = $url_params['orderNumber'];
+            $amount = $payService->amount;
+            //$amount = 1;
+            $url_params['currency'] = 934;
+            $url_params['language'] = 'ru';
+            $username = '202161001030';
+            $password = 'Jnd84Vs20GsncKm';
+            $returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
+            $url_params['description'] = $payService->description;
+            $url_params['merchantOrderNumber'] = 2;
+            $url_params['sessionTimeoutSecs'] = 300;
+            $client = new Client();
+            $response = $client->post('https://mpi.gov.tm/payment/rest/register.do', [
+                'form_params' => [
+                    'password' => $password,
+                    'userName' => $username,
+                    'pageView' => 'DESKTOP',
+                    'sessionTimeoutSecs' => 600,
+                            'description' => 'sargyt',
+                            'orderNumber' => $payService->submitted_order_number,
+                            'amount'   => $amount,
+                            'currency'     => '934',
+                            'language'       => 'ru',
+                            'returnUrl'       => url($returnUrl),
+                            'failUrl'       => url($returnUrl),
+                        ],
+                    ]);
+                    $arr = json_decode($response->getBody(), true);
+                    // if ($arr['errorCode'] == 0) {
+                        $payService['description'] =  "Order Bus";
+                        $payService['response_order_id'] =  $arr['orderId'];        
+                        $payService['response_form_url'] =  $arr['formUrl'];        
+                        $payService['response_error_code'] =  $arr['errorCode'];
+                        $payService['merchant_id'] =  2;
+                        $payService['merchant_order_number'] =  $order_bus->id;
+                        $payService['payment_type_id'] =  1; //Order Bus;
+                        $payService->save();
+                        return $arr;
+        }
+        
     }
 
 
