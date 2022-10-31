@@ -194,7 +194,7 @@ class OrderController extends Controller
                     $payService['response_order_id'] =  $a['response_order_id'];        
                     $payService['response_form_url'] =  $a['form_url'];        
                     $payService['response_error_code'] =  'null';
-                    $payService['merchant_id'] =  1;
+                    $payService['merchant_id'] =  2;
                     $payService['merchant_order_number'] =  $order_bus->id;
                     $payService['payment_type_id'] =  1; //Order Bus;
 
@@ -280,7 +280,7 @@ class OrderController extends Controller
                 $payService['response_order_id'] =  $a['response_order_id'];        
                 $payService['response_form_url'] =  $a['form_url'];        
                 $payService['response_error_code'] =  'null';
-                $payService['merchant_id'] =  1;
+                $payService['merchant_id'] =  2;
                 $payService['merchant_order_number'] =  $order_truck->id;
                 $payService['payment_type_id'] =  2; //Order Truck;
                 $payService->save();

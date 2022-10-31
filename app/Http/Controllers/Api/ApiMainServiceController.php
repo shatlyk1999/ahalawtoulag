@@ -68,20 +68,6 @@ class ApiMainServiceController extends Controller
         ]);
     }
 
-    public function order_truck(Request $request)
-    {
-        $validator = Validator::validate($request->all(),
-        [
-            // 'payment_type_id'=>'required|exists:payment_types,id',
-            // 'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            // 'amount_used'=>'regex:/^\d+(\.\d{1,2})?$/',
-            // // 'paying_way'=>'required|exists:paying_ways,id',
-            // 'return_url' => 'required|url',
-        ]);
-         return $request->all();die;
-
-    }
-
     public function order_bus(Request $request){
         $order_bus = new OrderBus;
         $order_bus->roly = $request->fizik_yuridik;
@@ -154,6 +140,78 @@ class ApiMainServiceController extends Controller
         
     }
 
+
+    public function order_truck(Request $request)
+    {
+        $order_truck = new OrderTruck;
+        
+        $order_truck->roly = $request->fizik_yuridik;
+        $order_truck->name = $request->name;
+        if($request->edaraady != null){
+            $order_truck->edaraady = $request->edaraady;
+        }
+        else{
+            $order_truck->edaraady = 'null';
+        };
+        $order_truck->email = $request->email;
+        $order_truck->orderphone = $request->phone;
+        $order_truck->from = $request->from;
+        $order_truck->to = $request->to;
+        $order_truck->datetime = $request->datetime;
+        $order_truck->yuk_gornush = $request->yuk_gornush;
+        $order_truck->yuk_agram = $request->yuk_agram;
+        $order_truck->note = $request->note;
+        if($order_truck->save()){
+        $payService = new Payment();
+        $payService->amount = $request->price;
+        $payService->amount = (int)$payService->amount * 100;
+
+        $url_params = [];
+            
+        $randomString = Str::random(6);
+        $full = substr($randomString, 0, 6);
+        $order_num = $full.date("dmYHis");       
+        $url_params['orderNumber'] = $order_num;
+        $payService->submitted_order_number = $url_params['orderNumber'];
+        $amount = $payService->amount;
+        $url_params['currency'] = 934;
+        $url_params['language'] = 'ru';
+        $username = '202161001030';
+        $password = 'Jnd84Vs20GsncKm';
+        $returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
+        $url_params['description'] = $payService->description;
+        $url_params['merchantOrderNumber'] = 2;
+        $url_params['sessionTimeoutSecs'] = 300;
+        $client = new Client();
+        $response = $client->post('https://mpi.gov.tm/payment/rest/register.do', [
+            'form_params' => [
+                'password' => $password,
+                'userName' => $username,
+                'pageView' => 'DESKTOP',
+                'sessionTimeoutSecs' => 600,
+                        'description' => 'sargyt',
+                        'orderNumber' => $payService->submitted_order_number,
+                        'amount'   => $amount,
+                        'currency'     => '934',
+                        'language'       => 'ru',
+                        'returnUrl'       => url($returnUrl),
+                        'failUrl'       => url($returnUrl),
+                    ],
+                ]);
+                $arr = json_decode($response->getBody(), true);
+                // if ($arr['errorCode'] == 0) {
+                    $payService['description'] =  "Order Truck";
+                    $payService['response_order_id'] =  $arr['orderId'];        
+                    $payService['response_form_url'] =  $arr['formUrl'];        
+                    $payService['response_error_code'] =  $arr['errorCode'];
+                    $payService['merchant_id'] =  2;
+                    $payService['merchant_order_number'] =  $order_truck->id;
+                    $payService['payment_type_id'] = 2; //Order Truck;
+                    $payService->save();
+                    return $arr; 
+        }
+    }
+
     public function checkpayment(Request $request)
     {
         $message = "";
@@ -176,14 +234,12 @@ class ApiMainServiceController extends Controller
                 $arr = json_decode($response->getBody(), true);
 
                 if ($arr['ErrorCode'] == 0 && $arr['OrderStatus']  == 2) {
-                    // $this->sendMessage($paymentOffer->phone,'Hormatly müşderi sizin tölegiňiz üstünlikli geçdi!');
                     $payment->status = 1;
                     if (isset($arr['ErrorMessage'])) {
                         $message = $arr['ErrorMessage'];
                     } else {
                         $message = 'Payment was successful';
                     }
-                    // return $payment->status;
                     $payment->save();
                     if($payment->payment_type_id == 1){
                         $mailData = OrderBus::where('id',$payment['merchant_order_number'])->get();
@@ -204,14 +260,11 @@ class ApiMainServiceController extends Controller
                     if (strlen(trim($message)) == 0)
                     $message .= 'Payment was not successful';
                     $payment->status = 2;
-                    $payment->save();
-        
-                    // if ($payment->return_url){
+                    $payment->save();        
                         return response()->json([
                             "success" => false,
                             'message' => 'Töleg amala aşmady',
                         ]);        
-                    // }
                 }
             }
             abort(404);
@@ -219,9 +272,91 @@ class ApiMainServiceController extends Controller
 
     }
 
-    public function test(){
+    public function order_bus_yuridiki(Request $request){     
+        // $validator = Validator::validate($request->all(),
+        // [
+        //     'awtobus_yuk' => 'required',
+        //     'fizik_yuridik'=>'required',
+        //     'datetime'=>'required',
+        //     'name'=>'required',
+        //     'from'=>'required',
+        //     'to'=>'required',
+        //     'phone'=>'required',
+        //     'duration'=>'required',
+        //     'email' => 'required|email',
+        //     'personNumber'=>'required',
+        //     'note'=>'required',
+        //     'price'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+        //     'awto'=>'required',
+        // ]);
+        $order_bus = new OrderBus;
+        $order_bus->roly = $request->fizik_yuridik;
+        $order_bus->name = $request->name;
+        if($request->edaraady != null){
+            $order_bus->edaraady = $request->edaraady;
+        }
+        else{
+            $order_bus->edaraady = 'null';
+        };
+        $order_bus->email = $request->email;
+        $order_bus->orderphone = $request->phone;
+        $order_bus->from = $request->from;
+        $order_bus->to = $request->to;
+        $order_bus->datetime = $request->datetime;
+        $order_bus->duration =$request->duration;
+        $order_bus->personnumber = $request->personNumber;
+        $order_bus->note = $request->note;
+        if ($order_bus->save()) {
+            $mailData = $request->all();
 
+            $email = 'ahalob@sanly.tm';
+    
+            Mail::to($email)->send(new EmailDemo($mailData));
+            return response()->json([
+                "success" => true,
+                'message' => 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys',
+            ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                'message' => 'Sargydyňyz kabul edilmedi',
+            ]);
+        } 
     }
 
+    public function order_truck_yuridiki(Request $request){
+        $order_truck = new OrderTruck;
+        
+        $order_truck->roly = $request->fizik_yuridik;
+        $order_truck->name = $request->name;
+        if($request->edaraady != null){
+            $order_truck->edaraady = $request->edaraady;
+        }
+        else{
+            $order_truck->edaraady = 'null';
+        };
+        $order_truck->email = $request->email;
+        $order_truck->orderphone = $request->phone;
+        $order_truck->from = $request->from;
+        $order_truck->to = $request->to;
+        $order_truck->datetime = $request->datetime;
+        $order_truck->yuk_gornush = $request->yuk_gornush;
+        $order_truck->yuk_agram = $request->yuk_agram;
+        $order_truck->note = $request->note;
+        if ($order_truck->save()) {
+        $mailData = $request->all();
+        $email = 'ahalob@sanly.tm';
+        Mail::to($email)->send(new EmailDemo($mailData));
+        return response()->json([
+            "success" => true,
+            'message' => 'Sargydyňyz kabul edildi. Tiz wagtda siziň bilen habarlaşarys',
+        ]);
+        } else {
+            return response()->json([
+                "success" => false,
+                'message' => 'Sargydyňyz kabul edilmedi',
+            ]);
+        } 
+    }
 
 }

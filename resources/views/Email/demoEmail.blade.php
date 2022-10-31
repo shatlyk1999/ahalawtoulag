@@ -50,9 +50,14 @@
     'Yukun agramy: ' {{$mailData['yuk_agram']}} 'tonna'
 @endif
 <br>
+@if(isset($mailData['price']))
+    'Tölegi: ' {{$mailData['price']}} 'manat'
+@endif
+<br>
 @if(isset($mailData['note']))
     'Bellik: ' {{$mailData['note']}}
 @endif
+<br>
 
 
 @endcomponent
