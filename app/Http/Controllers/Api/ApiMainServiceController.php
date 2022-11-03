@@ -135,6 +135,12 @@ class ApiMainServiceController extends Controller
                         $payService['merchant_order_number'] =  $order_bus->id;
                         $payService['payment_type_id'] =  1; //Order Bus;
                         $payService->save();
+                        if ($arr['errorCode'] == 0) {
+                            $arr['success'] = true;
+                            $arr['message'] = 'OK';
+                        } else {
+                            $arr['success'] = false;
+                        }
                         return $arr;
         }
         
