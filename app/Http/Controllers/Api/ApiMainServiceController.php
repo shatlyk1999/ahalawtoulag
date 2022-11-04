@@ -105,7 +105,8 @@ class ApiMainServiceController extends Controller
             $url_params['language'] = 'ru';
             $username = '202161001030';
             $password = 'Jnd84Vs20GsncKm';
-            $returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
+            $returnUrl = $request->successUrl;
+            //$returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
             $url_params['description'] = $payService->description;
             $url_params['merchantOrderNumber'] = 2;
             $url_params['sessionTimeoutSecs'] = 300;
@@ -184,7 +185,8 @@ class ApiMainServiceController extends Controller
         $url_params['language'] = 'ru';
         $username = '202161001030';
         $password = 'Jnd84Vs20GsncKm';
-        $returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
+        $returnUrl = $request->successUrl;
+        //$returnUrl = 'https://ahalawtoulag.com.tm/checkpayment?orderId='.$payService->submitted_order_number;
         $url_params['description'] = $payService->description;
         $url_params['merchantOrderNumber'] = 2;
         $url_params['sessionTimeoutSecs'] = 300;
